@@ -17,6 +17,7 @@ $(window).keydown(function (e) {
 
 
 Matrix = function (rows, columns) {
+DIA = function (rows, columns) {
   var i, j;
   this.data = new Array(rows);
   for (i = 0; i < rows; i++) {
@@ -30,3 +31,19 @@ Matrix = function (rows, columns) {
     this.set(cos, -sin, transx,
              sin,  cos, transy);
   };
+  
+  this.configure = function (rot, scale, transx, transy) {
+    var rad = (rot * Math.PI)/180;
+    var sin = Math.sin(rad) * scale;
+    var cos = Math.cos(rad) * scale;
+    this.set(cos, -sin, transx,
+             sin,  cos, transy);
+  };
+
+
+  Matrix = function (rows, columns) {
+  var i, j;
+  this.data = new Array(rows);
+  for (i = 0; i < rows; i++) {
+    this.data[i] = new Array(columns);
+  }
