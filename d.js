@@ -5,8 +5,7 @@ Sprite = function () {
 
     this.vel = {
       x:   0,
-      y:   0,
-      rot: 0
+
     };
 
     this.acc = {
